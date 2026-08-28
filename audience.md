@@ -124,6 +124,30 @@ This wasn't asked for — it surfaced unprompted in a thread about training hour
 
 ---
 
+## Research: TikTok, search "how to train mma with a job" (75 comments)
+
+Second platform, same question, same pattern — this is the cross-platform confirmation.
+
+### Top comment by far (58 likes) — it's a logistics problem, not a willpower problem
+
+> "Everyone saying 'oh just work 9-5 and train in the afternoons' some gyms don't have classes that match your schedule and some jobs don't give you the 'perfect schedule' to align with training" — Victor Isaian (58 likes)
+
+This is the single most-liked comment found across both platforms. It directly names the mismatch: the problem isn't "find the willpower," it's that gym class times and work shift times don't line up, and nobody's schedule is the tidy "9-5 then train" example everyone gives as advice. This is close to a direct spec for a scheduling feature — matching training windows against a real (often non-9-5) shift pattern, not assuming a standard week.
+
+> "If a job can accommodate your training hours and you're able to recover properly, go for it" — Stryde_Long
+
+> "I was fortunate enough to get a job at my jiujitsu gym and because of that I'm basically able to train full time... I don't make a lot of money but it's enough for my situation. We out here making it happen fr" — Bryan.juarez (9 likes)
+
+> "dude i've been thinking about being in the air force and training as much as possible when im not on shift? so i have insurance how do you feel about that?" — Xander
+
+Shift work (air force, and by extension trades/emergency services/healthcare) shows up unprompted again as its own category, distinct from a standard 9-5 — reinforces that "9-5 or trade job" in the original brief undersells how many people are working rotating/non-standard shifts specifically.
+
+> "Get a job and train on the side it's not that hard" — lumonix64
+
+The one dissenting voice — worth noting as a real counter-opinion (some in the audience think this is overthought), but it's the minority position by engagement; the 58-like comment above is the one that resonated.
+
+---
+
 ## Synthesis
 
 - Lead with job + hours, not vibes — that's literally how they introduce themselves.
@@ -134,4 +158,6 @@ This wasn't asked for — it surfaced unprompted in a thread about training hour
 - "What does realistic training volume actually look like" is a proven high-engagement question (75 comments on one thread asking exactly this) — a peer-benchmarking feature ("see how your training hours compare to people like you") answers a question this community already asks itself, not a guess at a feature.
 - Don't sell "grind harder" — the one person in the research who described extreme-hours hustle culture frames it as a burnout warning, not a goal.
 - For a real slice of this audience, training volume is coping with loneliness/depression, not performance optimization. Keep the "motivation feed" human, not just streaks/gamification — this audience includes people for whom training is holding them together.
-- Next concrete action: run these same two searches on Instagram/TikTok comments (not posts) to see if "catch up" and "blue collar" show up outside Reddit too — one confirming data point from a second platform is enough to lock this language in before writing app copy.
+- **Cross-platform confirmed:** the single most-liked comment found in this research (58 likes, TikTok) says the problem outright — gym class times and shift/work schedules don't line up, and the "just train in the afternoons" advice assumes a standard week most of this audience doesn't have. This is close to a direct feature spec: match training windows to a real, possibly non-standard shift pattern, don't assume 9-5.
+- Shift work (not just "9-5 or trade job") is its own recurring category — trades, healthcare, aviation, military all surfaced unprompted. Broaden the framing from "tradie" to "shift-worker" in messaging, while keeping tradie as the sharpest initial wedge.
+- Next concrete action: sketch the scheduling feature against Victor Isaian's exact complaint (58-like comment) — input a real shift pattern (not a generic weekly grid) and match it against gym class times. That's the feature this research points at hardest, ahead of the weight-cut tracker.
