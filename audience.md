@@ -72,10 +72,66 @@ The people who've "solved it" didn't get more free time — they got resourceful
 
 ---
 
+## Research: real language, r/MMA_Academy — "how much do people actually train" thread
+
+Source: the original post behind the family/kids thread above — turns out it's a dedicated thread, 28 upvotes / 75 comments, OP WillBe5621:
+
+> "I read posts all the time from people asking if they [should train X days a week]... I just wanted to know how often most people here train in reality." — WillBe5621 (OP, 28 upvotes, 75 comments)
+
+75 comments on "what's realistic" is the single strongest engagement signal in all the research so far — this exact question (not "how do I train more," but "what does normal actually look like") is what pulls people into a thread. **Product idea worth flagging separately:** a feature that shows a user how their training hours compare to real peers answers this exact recurring question — it's not a hypothetical feature, it's a question this community actively asks itself.
+
+### Job diversity — confirms "blue collar + white collar + everything between," all asking the same question
+
+> "mechanic 9-6" — Own_Recording2791 (4 upvotes)
+
+> "Aircraft mechanic up at 3 am off at 3:30 pm and my class is at 5" — classyxerj
+
+> "I',m single and have regular 9-5 with WFH so pretty laid back" — Estpart
+
+> "Fellow medical student here" — lobitojr
+
+The job-first self-intro pattern holds across every job type, not just trades — worth noting the audience isn't purely blue collar, but blue collar is the largest and most vocal cluster.
+
+### Training volume — real numbers people actually use as a benchmark
+
+> "Like 16-19 hours a week, 5-6 training days. Not including runs." — PunksPrettyMuchDead, 42 (11 upvotes)
+
+> "about 13 ish hrs" (some weeks dropping to "like 6 hrs a week" when busy) — lobitojr
+
+> "5/6 days a week roughly 15 hrs" — Single-Frosting-3742 (Top 1% Commenter)
+
+> "I usually get in 10-12 hours of training per week." — marcomauythai (15 upvotes)
+
+These numbers (6-19 hrs/week, swinging hard with life load) are real anchors for what a "realistic training week" range looks like for a shift-working/job-holding fighter — useful directly for any weekly-target or benchmark feature.
+
+### The burnout cautionary tale — validates that "grind harder" isn't actually the goal
+
+> "Worked 90+ hrs/wk in real estate... no going out, no social life, no celebrating birthdays, holidays etc for 5yrs... Not sustainable whatsoever & extreme burn out is inevitable but I recovered & am healing now." — Neurotrophe7
+
+Nobody in the thread held this up as the goal — it reads as a warning, not an aspiration. Confirms the earlier synthesis point: sell sustainable structure, not maximum grind.
+
+### Training as coping, not just fitness — the most important and easy-to-miss finding
+
+> "Have no GF or a social life so i train every day, sometimes more than one time a day." — Potential-Estate4058
+
+> "Your dedicated dude. Respect" — ROTTONWORLD
+
+> "No. I only train that much to prevent loneliness and depression from killing me slowly." — Potential-Estate4058
+
+> "I smoke weed and weight lift to fill that hole your on about" — ROTTONWORLD
+
+This wasn't asked for — it surfaced unprompted in a thread about training hours. For a meaningful slice of this audience, training volume is a coping mechanism for loneliness or depression, not a performance-optimization problem. This changes what "motivation feed" should actually do: it can't just be hype/streaks, because for some of this audience training *is* the thing holding them together. Worth being careful and human here rather than purely gamifying it.
+
+---
+
 ## Synthesis
 
 - Lead with job + hours, not vibes — that's literally how they introduce themselves.
 - "Blue collar" is a word this audience already uses about itself — safe to use in copy.
 - The sharpest pain isn't work fatigue, it's the anxiety of falling behind at work ("catch up") and the guilt of training time vs. family time. Both outrank "I'm tired" as the real problem.
 - Don't sell escape from the job — sell relief from the catch-up spiral and the guilt, while keeping the job. The audience has already made peace with keeping the job; the fantasy of quitting is a joke, not a real want.
+- The audience isn't purely tradies — it's blue collar, white collar, WFH, and students, all asking the same "what's realistic" question. Blue collar/shift work is the sharpest wedge to launch with, not the only viable audience.
+- "What does realistic training volume actually look like" is a proven high-engagement question (75 comments on one thread asking exactly this) — a peer-benchmarking feature ("see how your training hours compare to people like you") answers a question this community already asks itself, not a guess at a feature.
+- Don't sell "grind harder" — the one person in the research who described extreme-hours hustle culture frames it as a burnout warning, not a goal.
+- For a real slice of this audience, training volume is coping with loneliness/depression, not performance optimization. Keep the "motivation feed" human, not just streaks/gamification — this audience includes people for whom training is holding them together.
 - Next concrete action: run these same two searches on Instagram/TikTok comments (not posts) to see if "catch up" and "blue collar" show up outside Reddit too — one confirming data point from a second platform is enough to lock this language in before writing app copy.
