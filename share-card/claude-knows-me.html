@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Knows Me — Lucas Fong</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* aurora palette */
+    --hue-violet:   #4c1d95;
+    --hue-purple:   #7c3aed;
+    --hue-pink:     #ec4899;
+    --hue-amber:    #f59e0b;
+    --page-bg:      #09090b;
+    --card-ink:     #f5f1ff;
+    --card-ink-dim: rgba(245,241,255,0.62);
+    --panel-bg:     rgba(255,255,255,0.06);
+    --panel-border: rgba(255,255,255,0.14);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html,body{
+    width:100%; height:100%;
+    background:var(--page-bg);
+  }
+
+  body{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+    font-family:'Inter', sans-serif;
+  }
+
+  /* soft radial orange glow behind the card */
+  body::before{
+    content:"";
+    position:absolute;
+    top:50%; left:50%;
+    width:900px; height:900px;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(circle, rgba(245,158,11,0.20) 0%, rgba(236,72,153,0.10) 35%, rgba(9,9,11,0) 68%);
+    filter:blur(10px);
+    pointer-events:none;
+  }
+
+  .stage{
+    position:relative;
+    width:480px;
+    height:672px;
+  }
+
+  .card{
+    position:relative;
+    width:100%;
+    height:100%;
+    border-radius:28px;
+    overflow:hidden;
+    background:
+      radial-gradient(120% 90% at 8% 0%,   rgba(236,72,153,0.55) 0%, rgba(236,72,153,0) 55%),
+      radial-gradient(100% 80% at 100% 8%, rgba(245,158,11,0.38) 0%, rgba(245,158,11,0) 52%),
+      radial-gradient(130% 100% at 100% 100%, rgba(124,58,237,0.65) 0%, rgba(124,58,237,0) 60%),
+      radial-gradient(120% 90% at 0% 100%, rgba(76,29,149,0.75) 0%, rgba(76,29,149,0) 55%),
+      linear-gradient(135deg, #1c0f34 0%, #2c1250 30%, #3a1259 55%, #24123f 78%, #150a28 100%);
+    box-shadow:
+      0 40px 80px -20px rgba(0,0,0,0.65),
+      0 0 0 1px rgba(255,255,255,0.06) inset,
+      0 1px 0 rgba(255,255,255,0.12) inset;
+  }
+
+  /* holographic foil strip along the top edge */
+  .foil{
+    position:absolute;
+    top:0; left:0; right:0;
+    height:7px;
+    background:conic-gradient(from 90deg at 50% 50%,
+      #f59e0b, #ec4899, #7c3aed, #4c1d95, #ec4899, #f59e0b, #7c3aed, #f59e0b);
+    background-size:200% 200%;
+    opacity:0.9;
+  }
+
+  /* grain overlay */
+  .grain{
+    position:absolute;
+    inset:0;
+    mix-blend-mode:overlay;
+    opacity:0.08;
+    pointer-events:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  .card-inner{
+    position:relative;
+    z-index:2;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    padding:38px 34px 26px;
+    gap:20px;
+  }
+
+  .wordmark{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px;
+    font-weight:500;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--card-ink-dim);
+  }
+
+  .wordmark span{ color:var(--hue-amber); }
+
+  .name{
+    font-family:'Playfair Display', serif;
+    font-weight:900;
+    font-size:46px;
+    line-height:1.05;
+    letter-spacing:-0.01em;
+    color:var(--card-ink);
+    text-wrap:balance;
+  }
+
+  .name-sub{
+    margin-top:8px;
+    font-family:'Inter', sans-serif;
+    font-size:13px;
+    font-weight:500;
+    color:var(--card-ink-dim);
+  }
+
+  .panels{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    min-height:0;
+  }
+
+  .panel{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:7px;
+    padding:14px 20px;
+    border-radius:16px;
+    background:var(--panel-bg);
+    border:1px solid var(--panel-border);
+    backdrop-filter:blur(14px) saturate(140%);
+    -webkit-backdrop-filter:blur(14px) saturate(140%);
+  }
+
+  .panel-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px;
+    font-weight:500;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--hue-amber);
+    opacity:0.9;
+  }
+
+  .panel ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+  }
+
+  .panel li{
+    font-family:'Inter', sans-serif;
+    font-size:13.5px;
+    font-weight:500;
+    line-height:1.35;
+    color:var(--card-ink);
+    padding-left:14px;
+    position:relative;
+  }
+
+  .panel li::before{
+    content:"";
+    position:absolute;
+    left:0; top:7px;
+    width:5px; height:5px;
+    border-radius:50%;
+    background:linear-gradient(135deg, var(--hue-pink), var(--hue-amber));
+  }
+
+  .foot{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:0.06em;
+    color:var(--card-ink-dim);
+    padding-top:2px;
+  }
+
+  .foot .brand{ color:var(--card-ink); font-weight:500; }
+</style>
+</head>
+<body>
+
+  <div class="stage">
+    <div class="card">
+      <div class="foil"></div>
+
+      <div class="card-inner">
+        <div class="wordmark">CCC <span>·</span> STAGE 2 <span>·</span> CLAUDE KNOWS ME</div>
+
+        <div>
+          <div class="name">Lucas Fong</div>
+          <div class="name-sub">Refrigeration/AC apprentice · Darwin, NT</div>
+        </div>
+
+        <div class="panels">
+          <div class="panel">
+            <div class="panel-label">Building</div>
+            <ul>
+              <li>Apprenticeship — locking in trade school dates + tools with Chris</li>
+              <li>KMA gym dispute — cancelling PaySmart direct debit, CTC in progress</li>
+              <li>Tradie Fight Fit — AI fitness × MMA side hustle</li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <div class="panel-label">How I Work</div>
+            <ul>
+              <li>Direct answers, clear verdicts — no hedging</li>
+              <li>Skip beginner-level explanations, especially martial arts</li>
+              <li>Well-formatted and visually structured, no detail lost</li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <div class="panel-label">Definition of Done</div>
+            <ul>
+              <li>A concrete recommendation or verdict — not just options</li>
+              <li>Clean and scannable, every time</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="foot">
+          <span>29 AUG 2026</span>
+          <span class="brand">claudecodeclub.ai</span>
+        </div>
+      </div>
+
+      <div class="grain"></div>
+    </div>
+  </div>
+
+</body>
+</html>
